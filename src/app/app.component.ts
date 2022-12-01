@@ -34,7 +34,7 @@ export class AppComponent {
   ];
 
   filteredStatus: string = '';
-  
+
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
       'list-group-item-success': server.status === 'stable',
@@ -42,4 +42,15 @@ export class AppComponent {
       'list-group-item-danger': server.status === 'critical'
     };
   }
+
+  onSubmit(){
+    this.servers.push({
+      instanceType: 'small',
+      name: 'New Development Server',
+      status: 'stable',
+      started: new Date(15, 1, 2017)
+    });
+
+  } 
+
 }

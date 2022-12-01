@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false // pure false allows for reload on new data entry
 })
 export class FilterPipe implements PipeTransform {
 
